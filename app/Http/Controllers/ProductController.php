@@ -62,4 +62,9 @@ class ProductController extends Controller
         $product->save();
         return $req->input();
     }
+
+    function searchProduct($key)
+    {
+        return Product::where('name','like',"%$key%")->get();
+    }
 }
